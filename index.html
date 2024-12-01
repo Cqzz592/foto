@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão que muda de lugar</title>
+    <style>
+        body {
+            background-color: palevioletred;
+            display: flex;
+            justify-content: center;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        header{
+            align-items: start;
+            color: #f0f0f0;
+        }
+        #movingButton {
+            position: absolute;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .btn {
+            position: relative;
+            right: 100px;
+            font-size: 16px;
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: green;
+            color: #f0f0f0;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Foto do peito??</h1>
+</header>
+    <button id="movingButton" onclick="moveButton()">Não</button>
+    <a href="sucesso.html" class="btn">Sim</a>
+
+    <script>
+        function moveButton() {
+            const button = document.getElementById('movingButton');
+            const screenWidth = window.innerWidth;
+            const screenHeight = window.innerHeight;
+
+            // Gera novas posições aleatórias dentro da tela
+            const newX = Math.random() * (screenWidth - button.offsetWidth);
+            const newY = Math.random() * (screenHeight - button.offsetHeight);
+
+            // Atualiza as posições do botão
+            button.style.left = `${newX}px`;
+            button.style.top = `${newY}px`;
+        }
+    </script>
+</body>
+</html>
